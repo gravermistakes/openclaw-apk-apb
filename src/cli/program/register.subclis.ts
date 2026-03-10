@@ -296,6 +296,15 @@ const entries: SubCliEntry[] = [
       mod.registerCompletionCli(program);
     },
   },
+  {
+    name: "ws-infer",
+    description: "WebSocket inference server and client for local models",
+    hasSubcommands: true,
+    register: async (program) => {
+      const mod = await import("../ws-infer-cli.js");
+      mod.registerWsInferCli(program);
+    },
+  },
 ];
 
 export function getSubCliEntries(): SubCliEntry[] {
